@@ -25,6 +25,9 @@ on:
       dns_zone_name:
         required: true
         type: string
+      helm_config_file:
+        required: true
+        type: string
 
 
 jobs:
@@ -41,6 +44,7 @@ jobs:
       environmentName: ${{ inputs.environment }}
       release_name: ${{ inputs.release_name }}
       dns_zone_name: ${{ inputs.dns_zone_name }}
+      helm_config_file: ${{ inputs.helm_config_file }}
     defaults:
       run:
         shell: bash
